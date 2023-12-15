@@ -1,21 +1,17 @@
 <template>
   <v-app>
     <v-main>
-      <router-view/>
+      <main-layout />
     </v-main>
   </v-app>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'App',
-
-  data () {
-    return {
-      //
-    }
-  },
-})
+<script setup lang="ts">
+import MainLayout from "@/layout/MainLayout.vue";
 </script>
+
+<style>
+body::-webkit-scrollbar {
+  display: none;
+}
+</style>

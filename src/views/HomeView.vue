@@ -1,18 +1,31 @@
 <template>
-  <hello-world />
+  {{ token.token }}
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { useTokenStore } from '@/stores/token';
 
-// Components
-import HelloWorld from '../components/HelloWorld.vue';
-
-export default defineComponent({
-  name: 'HomeView',
-
-  components: {
-    HelloWorld,
-  },
-});
+const token = useTokenStore();
 </script>
+
+<style scoped>
+fieldset {
+  padding: 16px;
+  border: none;
+}
+input {
+  border: solid 1px #333;
+  margin-left: 8px;
+  border-radius: 4px;
+}
+button {
+  background-color: #009944;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  margin-left: 8px;
+}
+button:hover {
+  background-color: #007722;
+}
+</style>
