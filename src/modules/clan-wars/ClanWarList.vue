@@ -1,11 +1,5 @@
-<template>
-  Clan Wars
-</template>
+<template>Clan Wars</template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

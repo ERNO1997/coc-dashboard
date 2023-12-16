@@ -1,11 +1,5 @@
-<template>
-  Clan Capital Raids
-</template>
+<template>Clan Capital Raids</template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

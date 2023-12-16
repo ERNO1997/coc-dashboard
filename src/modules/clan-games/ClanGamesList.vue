@@ -8,12 +8,9 @@
 </template>
 
 <script setup lang="ts">
-
-import RouteNames from "@/router/route-names";
-import GPrimaryBtn from "@/components/GPrimaryBtn.vue";
-import PageView from "@/components/PageView.vue";
+import RouteNames from '@/router/route-names';
+import GPrimaryBtn from '@/components/GPrimaryBtn.vue';
+import PageView from '@/components/PageView.vue';
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

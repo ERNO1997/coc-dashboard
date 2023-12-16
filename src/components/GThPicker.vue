@@ -25,13 +25,13 @@ import th13 from '@/assets/th13-5.webp';
 import th14 from '@/assets/th14-5.webp';
 import th15 from '@/assets/th15-5.webp';
 import th16 from '@/assets/th16.webp';
-import {computed, ref} from "vue";
+import { computed, ref } from 'vue';
 
 const props = defineProps({
   modelValue: String,
 });
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue']);
 
 const localModel = computed({
   get() {
@@ -39,16 +39,14 @@ const localModel = computed({
   },
   set(value) {
     emit('update:modelValue', value);
-  }
+  },
 });
 
 function selectTh(th: number) {
   localModel.value = th.toString();
 }
 
-const options = ref([
-  th1, th2, th3, th4, th5, th6, th7, th8, th9, th10, th11, th12, th13, th14, th15, th16,
-]);
+const options = ref([th1, th2, th3, th4, th5, th6, th7, th8, th9, th10, th11, th12, th13, th14, th15, th16]);
 </script>
 
 <style scoped>

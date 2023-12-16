@@ -4,7 +4,7 @@
       <g-primary-btn prepend-icon="mdi-plus" :to="{ name: RouteNames.ADD_MEMBER }">Add member</g-primary-btn>
     </template>
     <v-card class="pb-2 px-4">
-      <g-loading-progress-circular v-if="loadingMembersState === LoadingDataState.LOADING" message="Loading members"/>
+      <g-loading-progress-circular v-if="loadingMembersState === LoadingDataState.LOADING" message="Loading members" />
       <table v-else-if="loadingMembersState === LoadingDataState.OK">
         <tr>
           <th class="py-2">ID</th>
@@ -41,9 +41,7 @@
           </td>
         </tr>
       </table>
-      <div v-else>
-        error
-      </div>
+      <div v-else>error</div>
     </v-card>
   </page-view>
 </template>
@@ -56,7 +54,7 @@ import GPrimaryBtn from '@/components/GPrimaryBtn.vue';
 import RouteNames from '@/router/route-names';
 import { type ClanMemberFirebase, useMembersAPI } from '@/firebase-api-db/members';
 import { LoadingDataState } from '@/models/enum/loading-data-state';
-import GLoadingProgressCircular from "@/components/GLoadingProgressCircular.vue";
+import GLoadingProgressCircular from '@/components/GLoadingProgressCircular.vue';
 
 const loadingMembersState = ref(LoadingDataState.LOADING);
 const members = ref<ClanMemberFirebase[]>([]);

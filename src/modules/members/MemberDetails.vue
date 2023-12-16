@@ -4,7 +4,7 @@
       <g-primary-btn prepend-icon="mdi-check" @click="saveMember">Save</g-primary-btn>
     </template>
     <v-card class="pb-4 px-4">
-      <g-loading-progress-circular v-if="loadingMemberState === LoadingDataState.LOADING" message="Loading member"/>
+      <g-loading-progress-circular v-if="loadingMemberState === LoadingDataState.LOADING" message="Loading member" />
       <v-form v-else-if="loadingMemberState === LoadingDataState.OK" class="pt-8">
         <v-row>
           <v-col cols="4">
@@ -21,25 +21,23 @@
           </v-col>
         </v-row>
       </v-form>
-      <div v-else>
-        error
-      </div>
+      <div v-else>error</div>
     </v-card>
   </page-view>
 </template>
 
 <script setup lang="ts">
 import PageView from '@/components/PageView.vue';
-import {computed, onMounted, ref} from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import type ClanMember from '@/models/clan-member';
 import GPrimaryBtn from '@/components/GPrimaryBtn.vue';
-import {ClanMemberRole} from '@/models/clan-member-role';
-import {useRoute, useRouter} from 'vue-router';
+import { ClanMemberRole } from '@/models/clan-member-role';
+import { useRoute, useRouter } from 'vue-router';
 import RouteNames from '@/router/route-names';
-import {useMembersAPI} from '@/firebase-api-db/members';
-import {LoadingDataState} from "@/models/enum/loading-data-state";
-import GLoadingProgressCircular from "@/components/GLoadingProgressCircular.vue";
-import GThPicker from "@/components/GThPicker.vue";
+import { useMembersAPI } from '@/firebase-api-db/members';
+import { LoadingDataState } from '@/models/enum/loading-data-state';
+import GLoadingProgressCircular from '@/components/GLoadingProgressCircular.vue';
+import GThPicker from '@/components/GThPicker.vue';
 
 const loadingMemberState = ref(LoadingDataState.LOADING);
 
