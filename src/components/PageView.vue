@@ -5,7 +5,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="py-4 px-8"  style="overflow-y: scroll">
+  <div class="py-4 px-8" style="overflow-y: scroll">
     <div class="d-flex align-center">
       <h1 v-if="title !== undefined" class="mb-2">{{ title }}</h1>
       <v-spacer />

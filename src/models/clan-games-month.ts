@@ -1,3 +1,3 @@
 export default interface ClanGamesMonth {
-    [firebaseId: string]: number,
+  [firebaseId: string]: number;
 }

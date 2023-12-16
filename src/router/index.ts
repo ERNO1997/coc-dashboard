@@ -4,10 +4,10 @@ import RouteNames from './route-names';
 import MemberList from '@/modules/members/MemberList.vue';
 import MySettings from '@/modules/settings/MySettings.vue';
 import MemberDetails from '@/modules/members/MemberDetails.vue';
-import ClanGamesList from "@/modules/clan-games/ClanGamesList.vue";
-import ClanCapitalRaidList from "@/modules/clan-capital/ClanCapitalRaidList.vue";
-import ClanWarList from "@/modules/clan-wars/ClanWarList.vue";
-import AddClanGamesResult from "@/modules/clan-games/AddClanGamesResult.vue";
+import ClanGamesList from '@/modules/clan-games/ClanGamesList.vue';
+import ClanCapitalRaidList from '@/modules/clan-capital/ClanCapitalRaidList.vue';
+import ClanWarList from '@/modules/clan-wars/ClanWarList.vue';
+import AddClanGamesResult from '@/modules/clan-games/AddClanGamesResult.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

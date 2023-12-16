@@ -4,7 +4,8 @@
       <g-primary-btn prepend-icon="mdi-plus" :to="{ name: RouteNames.ADD_MEMBER }">Add member</g-primary-btn>
     </template>
     <v-card class="pb-2 px-4">
-      <table>
+      <g-loading-progress-circular v-if="loadingMembersState === LoadingDataState.LOADING" message="Loading members" />
+      <table v-else-if="loadingMembersState === LoadingDataState.OK">
         <tr>
           <th class="py-2">ID</th>
           <th class="py-2">Name</th>
@@ -40,6 +41,7 @@
           </td>
         </tr>
       </table>
+      <div v-else>error</div>
     </v-card>
   </page-view>
 </template>
@@ -50,15 +52,21 @@ import { onMounted, ref } from 'vue';
 import { ClanMemberRole } from '@/models/clan-member-role';
 import GPrimaryBtn from '@/components/GPrimaryBtn.vue';
 import RouteNames from '@/router/route-names';
-import { ClanMemberFirebase, useMembersAPI } from '@/firebase-api-db/members';
+import { type ClanMemberFirebase, useMembersAPI } from '@/firebase-api-db/members';
+import { LoadingDataState } from '@/models/enum/loading-data-state';
+import GLoadingProgressCircular from '@/components/GLoadingProgressCircular.vue';
 
+const loadingMembersState = ref(LoadingDataState.LOADING);
 const members = ref<ClanMemberFirebase[]>([]);
 const membersApi = useMembersAPI();
 
 async function fetch() {
   try {
+    loadingMembersState.value = LoadingDataState.LOADING;
     members.value = await membersApi.getMembers();
+    loadingMembersState.value = LoadingDataState.OK;
   } catch (error) {
+    loadingMembersState.value = LoadingDataState.ERROR;
     console.error(error);
   }
 }
