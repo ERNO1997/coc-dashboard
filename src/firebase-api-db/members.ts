@@ -2,6 +2,7 @@ import { BASE_URL } from '@/firebase-api-db/config';
 import type ClanMember from '@/models/clan-member';
 import { ClanMemberRole } from '@/models/clan-member-role';
 import RouteNames from '@/router/route-names';
+import { da } from 'vuetify/locale';
 
 export interface ClanMemberFirebase {
   firebaseId: string;
@@ -25,6 +26,8 @@ export const useMembersAPI = () => {
               role: data[id].role ?? ClanMemberRole.UNKNOWN,
               lastTimeSeen: data[id].lastTimeSeen ?? new Date(),
               isActive: data[id].isActive ?? false,
+              warStatus: data[id].warStatus ?? false,
+              enteringDate: data[id].lastTimeSeen ?? new Date(),
             },
           });
         }
@@ -49,10 +52,12 @@ export const useMembersAPI = () => {
           role: data.role ?? ClanMemberRole.UNKNOWN,
           lastTimeSeen: data.lastTimeSeen ?? new Date(),
           isActive: data.isActive ?? false,
+          warStatus: data.warStatus ?? false,
+          enteringDate: data.enteringDate ?? new Date(),
         };
         return result;
       } else {
-        throw new Error('Error loading members');
+        throw new Error('Error loading member');
       }
     } catch (error) {
       throw new Error(error?.toString());
