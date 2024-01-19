@@ -3,10 +3,11 @@ import HomeView from '@/views/HomeView.vue';
 import RouteNames from './route-names';
 import MemberList from '@/modules/members/MemberList.vue';
 import MySettings from '@/modules/settings/MySettings.vue';
-import MemberDetails from '@/modules/members/MemberDetails.vue';
+import MemberDetails from '@/modules/members/MemberDetailsWrapper.vue';
 import ClanGamesList from '@/modules/clan-games/ClanGamesList.vue';
 import ClanCapitalRaidList from '@/modules/clan-capital/ClanCapitalRaidList.vue';
 import ClanWarList from '@/modules/clan-wars/ClanWarList.vue';
+import PrepareClanWar from '@/modules/clan-wars/PrepareClanWar.vue';
 import AddClanGamesResult from '@/modules/clan-games/AddClanGamesResult.vue';
 
 const router = createRouter({
@@ -51,6 +52,11 @@ const router = createRouter({
       path: '/clan-wars',
       name: RouteNames.CLAN_WARS,
       component: ClanWarList,
+    },
+    {
+      path: '/clan-wars/add',
+      name: RouteNames.ADD_CLAN_WAR,
+      component: PrepareClanWar,
     },
     {
       path: '/settings',
