@@ -1,0 +1,6 @@
+[submodule "coc-dashboard-api"]
+	path = coc-dashboard-api
+	url = git@github.com:ERNO1997/coc-dashboard-api.git
+[submodule "coc-dashboard-ui"]
+	path = coc-dashboard-ui
+	url = git@github.com:ERNO1997/coc-dashboard-ui.git
